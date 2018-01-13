@@ -11,16 +11,30 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     
     <!-- MINIFIED CSS AND JS FILES CREATED USING https://www.minifier.org/ -->
-    <link href="css/style.min.css" rel="stylesheet">
     <link href="css/print.min.css" rel="stylesheet" media="print">
-
+    <noscript id="deferred-styles">
+        <link rel="stylesheet"href="css/style.min.css" media="none" onload="if(media!=='all')media='all'"/>
+      </noscript>
+      <script>
+        var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement);
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+      </script>
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
 
       // Optional TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-XXXX-Y');
-      ga('send', 'pageview');
+      // ga('create', 'UA-XXXX-Y');
+      // ga('send', 'pageview');
     </script>
     <script src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.min.js"></script>
@@ -28,7 +42,7 @@
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
+      <a href="/"><img src="img/profilepic_psl6bt.jpg"></a>
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
 
@@ -58,7 +72,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img style="width: 100px;" src="views/images/pizzeria-kpkfbl.jpg">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
@@ -69,5 +83,6 @@
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
       </footer>
     </div>
+    
   </body>
 </html>
