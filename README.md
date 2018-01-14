@@ -12,7 +12,13 @@ files
 
 4- compressed and resized the profile pic and the pizzaria image.
 
+5- moved the `link` element that grabs the fonts at the end of the `html` page. 
+
 # fixes i made for `main.js` for `pizza.html`
 1- Changed `changePizzaSizes()` to stop the Layout Thrashing.
 
-2- Changed `updatePositions()` to stop the Layout Thrashing.
+2- Removed `pizzasDiv` from the `for` loop.
+
+3- Changed `updatePositions()` to stop the Layout Thrashing.
+
+4- In line 545, i made the number of background pizzas change depending on the size of screen, instead of it being 200 pizzas all the time.
