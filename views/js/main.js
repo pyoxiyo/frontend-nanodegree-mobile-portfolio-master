@@ -542,7 +542,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  var height = window.screen.height
+  var height = window.screen.height;
   var rows = height / s;
   numPizzas = rows * cols;
   for (var i = 0; i < numPizzas; i++) {
