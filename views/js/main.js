@@ -447,7 +447,8 @@ var resizePizzas = function(size) {
   //   return dx;
   // }
 
-  // Iterates through pizza elements on the page and changes their widths
+  // This function decides which width percentage it wants, and sets the width
+  // of the pizzas to that percentage.
   function changePizzaSizes(size) {
     var newWidth;
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
@@ -462,7 +463,7 @@ var resizePizzas = function(size) {
         newWidth = 50;
         break;
       default:
-        console.log("bug in sizeSwitcher");
+        console.log("bug in changePizzaSizes");
     }
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + "%";
@@ -513,7 +514,8 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+  // moved these two variable declerations from the for loop, this way, 
+  // the browser doesn't need to run layout before paint, over and over.
   var items = document.querySelectorAll('.mover');
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
